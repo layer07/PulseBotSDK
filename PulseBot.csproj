@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>PulseBot</RootNamespace>
+		<AssemblyName>PulseBot</AssemblyName>
+
+		<!-- Package Metadata -->
+		<PackageId>PulseBot</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>YourName</Authors>
+		<Company>YourCompany</Company>
+		<Description>Lightning-fast chat bot SDK with reflection-based command routing. Sub-5ms command processing.</Description>
+		<PackageTags>bot;chat;sdk;tcp;udp;realtime;performance</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/yourusername/pulsebot</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/yourusername/pulsebot</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<!-- Build Settings -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+		<!-- Suppress missing XML doc warnings -->
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+
+		<!-- DISABLE TRIMMING FOR NOW - Keeps reflection working -->
+		<PublishTrimmed>false</PublishTrimmed>
+		<PublishSingleFile>false</PublishSingleFile>
+
+		<!-- Enable JSON reflection (critical for dynamic serialization) -->
+		<JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.3.0" />
+	</ItemGroup>
+
+</Project>

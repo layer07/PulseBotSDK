@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BotConfiguration>
+  <Server>
+    <IP>ioctl.rest</IP>
+    <Port>1339</Port>
+    <ApiKey>YOUR_API_KEY</ApiKey>
+    <Protocol>TCP</Protocol>
+  </Server>
+  
+  <Bot>
+    <Name>PulseBot</Name>
+    <OwnerPublicKey>00000000-0000-0000-0000-000000000000</OwnerPublicKey>
+    <AutoDetectOwner>true</AutoDetectOwner>
+  </Bot>
+  
+  <Commands>
+    <EnableAll>true</EnableAll>
+    <Disabled />
+    <RateLimitPerMinute>30</RateLimitPerMinute>
+  </Commands>
+  
+  <Network>
+    <ReceiveTimeoutSeconds>5</ReceiveTimeoutSeconds>
+    <ReconnectDelaySeconds>10</ReconnectDelaySeconds>
+    <MaxReconnectAttempts>-1</MaxReconnectAttempts>
+  </Network>
+  
+  <Logging>
+    <Level>Info</Level>
+    <LogToFile>false</LogToFile>
+    <LogFilePath>bot.log</LogFilePath>
+  </Logging>
+</BotConfiguration>
