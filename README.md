@@ -218,9 +218,8 @@ pulsebotclient/
 
 ## Requirements
 
-- .NET 8.0+
+- .NET 10+
 - MessagePack
-- ASP.NET Core (for file server)
 
 ## Configuration
 
