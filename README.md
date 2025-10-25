@@ -240,4 +240,3 @@ Open source SDK - contributions welcome. Add new components, commands, or featur
 
 ---
 
-**Built with 🔥 and C#**
