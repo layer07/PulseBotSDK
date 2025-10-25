@@ -41,6 +41,12 @@ public sealed record BotMessage
     public Guid? ReplyToID { get; init; }
 
     /// <summary>
+    /// Command identifier from UI chip (e.g., "ping", "react").
+    /// Null/empty if not a command.
+    /// </summary>
+    public string? CommandChip { get; init; }
+
+    /// <summary>
     /// Convert Unix timestamp to DateTime.
     /// </summary>
     public DateTime GetDateTime() =>

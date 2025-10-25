@@ -15,7 +15,8 @@ public sealed class ServerCommandHandler
     "SEND_MESSAGE",
     "BOT_SPAWN_SURFACE",
     "BOT_SPAWN_SURFACE_TARGETED",
-    "BOT_SURFACE_ACTION"
+    "BOT_SURFACE_ACTION",
+    "PING"
 };
 
     /// <summary>

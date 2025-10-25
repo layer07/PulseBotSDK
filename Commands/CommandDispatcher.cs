@@ -97,13 +97,17 @@ public sealed class CommandDispatcher
     /// </summary>
     public void Dispatch(BotMessage message)
     {
-        // Only process messages starting with command prefix
-        if (!message.Content.StartsWith('!')) return;
+        // CommandChip-only system (no content parsing fallback)
+        if (string.IsNullOrWhiteSpace(message.CommandChip))
+            return; // Not a command
 
-        // Parse command and arguments
-        var parts = message.Content.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-        var trigger = parts[0].ToLowerInvariant();
-        var args = parts.Length > 1 ? parts.Skip(1).ToArray() : Array.Empty<string>();
+        // Build trigger with ! prefix to match registered commands
+        var trigger = $"!{message.CommandChip}".ToLowerInvariant();
+
+        // Args come from message content (chip was already stripped by server)
+        var args = string.IsNullOrWhiteSpace(message.Content)
+            ? Array.Empty<string>()
+            : message.Content.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         // Find handler
         if (!_commands.TryGetValue(trigger, out var handler))
@@ -111,7 +115,7 @@ public sealed class CommandDispatcher
             _bot.ReplyToMessage(
                 message.RoomID,
                 message.MessageID,
-                $"❓ Unknown command: {trigger}\nTry !help for available commands"
+                $"❌ Unknown command: {trigger}\nTry !help for available commands"
             );
             return;
         }

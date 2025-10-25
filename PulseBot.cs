@@ -26,6 +26,8 @@ namespace PulseBot;
 public sealed class PulseBot : IDisposable
 {
     private readonly INetworkTransport _transport;
+    public INetworkTransport Transport => _transport;
+
 
     // Collections - concurrent for thread safety
     public ConcurrentDictionary<Guid, BotMessage> Messages { get; } = new();
@@ -110,6 +112,9 @@ public sealed class PulseBot : IDisposable
 
         _transport.Send("GET_MY_SERVERS");
     }
+
+  
+   
 
     /// <summary>
     /// Stop the bot and disconnect from server.
