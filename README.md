@@ -1,6 +1,6 @@
 # PulseBot SDK
 
-A C# bot framework for building interactive chat bots with rich UI surfaces, components, and local file serving capabilities.
+A C# bot framework IOCTL :: Pulse (https://ioctl.rest/main). 
 
 ## Features
 
